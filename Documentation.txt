@@ -24,6 +24,6 @@ The master module can be set up outside the house near the entrance, and the sla
 An interesting thing about this system is that if someone enters and the alarm sets off, even if the thief/person breaks the master system, the alarm will continue to ring forever
 because to stop the alarm, a false signal needs to be sent by the master if no motion is detected. Since the master will lose power, a false signal cannot be sent.
 
-A list of all the components used, the code for all the three processors and the circuit diagram is attached in this repository....
+A list of all the components used, the code for all three processors, the circuit diagrams and the demonstration video link is attached in this repository....
 
 Thank YOU !!!

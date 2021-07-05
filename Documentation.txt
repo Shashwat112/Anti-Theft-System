@@ -1,0 +1,29 @@
+Hi, 
+
+This is a project regarding theft alert. 
+
+The system works like this...
+
+There are two independent segments of the system, 
+1) The Master module for sensing/detection of any unwanted motion and sending a 1-bit signal
+2) The Slave module for receiving the signal from the master and turning on alarming systems inside the house
+
+The master and slave use Wi-Fi for communication and work up to a range of 200 meters. The master uses two sensors, an HC-SR04 ultrasonic sensor, and a PIR motion sensor. 
+The PIR motion sensor detects any movement, and the ultrasonic sensor detects the distance of an obstacle. If the obstacle/person is in range and moving, the processor checks 
+if both motion and distance within range is detected, and once both sensors give positive value, the processor sends true/false data to the slave. After the first signal,
+the master will continue sending true signal until motion on PIR is detected. Once no motion is detected, it will send false.
+
+The Slave part is connected to a relay module and an Arduino Nano, which is responsible for the alarm. The Arduino stores the tune for the alarm, a "siren" sound for now 
+but can be changed to any audio. It is connected to a speaker and a single transistor amplifier to amplify the sound. It is also connected to the slave module at a pin which turns 
+high or low depending in the signal from the master. The relay module is connected to the lights in the room. As soon as the processor receives a "true" signal, it turns one of
+its pins HIGH and both the relay and the speaker system turns on, turning on the room lights and setting off an alarm so that the owner of the house is alarmed. If it receives "false"
+signal it turns its pin to LOW, turning off the lights and the alarm.
+
+The master module can be set up outside the house near the entrance, and the slave module can be set up in the owner's room or any place inside the house.
+
+An interesting thing about this system is that if someone enters and the alarm sets off, even if the thief/person breaks the master system, the alarm will continue to ring forever
+because to stop the alarm, a false signal needs to be sent by the master if no motion is detected. Since the master will lose power, a false signal cannot be sent.
+
+A list of all the components used, the code for all the three processors and the circuit diagram is attached in this repository...
+
+Thank YOU !!!
